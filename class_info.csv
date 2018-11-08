@@ -1,0 +1,12 @@
+SQlite Class Name;Class Attribute;Type;Constraint;Primary Key;Foreign Key
+Venue;VenueName;TEXT;;Yes;
+;VenueAddr;TEXT;NOT NULL;;
+;Postal;Integer;NOT NULL CHECK (Postal > 99999 AND Postal < 1000000);;
+ConcertBooking;BookingID;TEXT;;Yes;
+;VenueName;TEXT;NOT NULL;;Venue (VenueName)
+;ConcertDate;Date;NOT NULL;;
+Band;BandName;TEXT;;Yes;
+;NumberOfMembers;Integer;NOT NULL CHECK (NumberOfMembers > 0);;
+BandBooking;BandName;TEXT;;Yes;Band (BandName)
+;BookingID;;;Yes;ConcertBooking (BookingID)
+;Headlining;;NOT NULL DEFAULT 0;;
